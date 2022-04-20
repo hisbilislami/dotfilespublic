@@ -1,6 +1,6 @@
 if !exists('g:loaded_cmp') | finish | endif
 
-set completeopt=menuone,noinsert,noselect
+set completeopt=menu,menuone,noinsert,noselect
 
 lua <<EOF
   -- Setup nvim-cmp.
@@ -15,15 +15,8 @@ lua <<EOF
     snippet = {
       -- REQUIRED - you must specify a snippet engine
       expand = function(args)
-        -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-        -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
         vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
       end,
-    },
-    window = {
-      -- completion = cmp.config.window.bordered(),
-      -- documentation = cmp.config.window.bordered(),
     },
     mapping = {
         ["<Tab>"] = cmp.mapping({
@@ -152,7 +145,7 @@ lua <<EOF
   cmp.setup.cmdline('/', {
     completion = {autocomplete = false},
     sources = {
-      { name = 'buffer', opts = { keyword_pattern = [=[[^[:blank:]].*]=] } }
+      { name = 'buffer', option = { keyword_pattern = [=[[^[:blank:]].*]=] } }
     }
   })
 

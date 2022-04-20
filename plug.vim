@@ -6,6 +6,7 @@ call plug#begin()
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'majutsushi/tagbar'
 
 if has("nvim")
   Plug 'hoob3rt/lualine.nvim'
@@ -25,6 +26,7 @@ if has("nvim")
   Plug 'SirVer/ultisnips'
   Plug 'quangnguyen30192/cmp-nvim-ultisnips'
   Plug 'honza/vim-snippets'
+  "Plug 'L3MON4D3/LuaSnip'
 
   Plug 'onsails/lspkind-nvim'
   " end of completion section
@@ -53,6 +55,14 @@ if has("nvim")
   Plug 'windwp/nvim-autopairs'
   Plug 'windwp/nvim-ts-autotag'
   " end of auto pair
+
+  " comment
+  Plug 'numToStr/Comment.nvim', { 'tag': 'v0.6' }
+  " end of comment
+
+  " line bubbling
+  Plug 'tpope/vim-unimpaired'
+  " end of line bubbling
   
 endif
 
