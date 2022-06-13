@@ -7,6 +7,7 @@ call plug#begin()
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'majutsushi/tagbar'
+Plug 'Yggdroot/indentLine'
 
 if has("nvim")
   Plug 'hoob3rt/lualine.nvim'
@@ -63,6 +64,10 @@ if has("nvim")
   " line bubbling
   Plug 'tpope/vim-unimpaired'
   " end of line bubbling
+  
+  " color css
+  Plug 'ap/vim-css-color', { 'for': [ 'css', 'scss' ] }
+  " end of color css
   
 endif
 

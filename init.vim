@@ -108,10 +108,10 @@ au BufNewFile,BufRead *.flow set filetype=javascript
 
 set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
 
+autocmd FileType php setlocal shiftwidth=4 tabstop=4 autoindent
 autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
-autocmd FileType php setlocal shiftwidth=4 tabstop=4
 autocmd FileType python setlocal shiftwidth=4 tabstop=4
 
 "}}}
@@ -170,5 +170,12 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#branch#enabled = 1
 
 "}}}
+
+" Indent Line "{{{
+let g:indentLine_setColors = 0
+let g:indentLine_defaultGroup = 'SpecialKey'
+let g:indentLine_autoResetWidth = 1
+"}}}
+
 
 " vim: set foldmethod=marker foldlevel=0:
