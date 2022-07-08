@@ -19,6 +19,7 @@ set title
 set autoindent
 set background=dark
 set nobackup
+set noswapfile
 set hlsearch
 set showcmd
 set cmdheight=1
