@@ -3,6 +3,7 @@ if !exists('g:lspconfig')
 endif
 
 lua << EOF
+require("nvim-lsp-installer").setup {}
 local nvim_lsp = require('lspconfig')
 local protocol = require('vim.lsp.protocol')
 
@@ -28,9 +29,9 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
   -- formatting
-  if client.name == 'tsserver' then
-    client.resolved_capabilities.document_formatting = false
-  end
+  --if client.name == 'tsserver' then
+  --  client.resolved_capabilities.document_formatting = false
+  --end
 
   if client.resolved_capabilities.document_formatting then
     vim.api.nvim_command [[augroup Format]]
@@ -94,7 +95,7 @@ nvim_lsp.intelephense.setup {
 
 nvim_lsp.diagnosticls.setup {
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "json", "css", "less", "scss", "pandoc" },
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx", "javascript", "javascriptreact", "json", "css", "less", "scss", "pandoc", "php" },
 
 }
 
